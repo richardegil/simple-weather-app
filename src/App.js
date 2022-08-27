@@ -6,33 +6,9 @@ function App() {
   const [location, setLocation] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=28f1877b66ad879c7738f044adffec53`;
+  const token = process.env.OPENWEATHER_TOKEN;
 
-  // const searchLocation = (event) => {
-  //   if (event.key === 'Enter') {
-  //     axios.get(url).then((response) => {
-  //     setData(response.data);
-  //     console.log(response.data);
-  //     })
-  //     setLocation('');
-  //   }
-  // }
-  
-// const searchLocation2 = (event) => {
-//     if (event.key === 'Enter') {
-//       fetch(url)
-//         .then((response) => response.json())
-//         .then((json) => {
-//           setData(json);
-//           // console.log(json);
-//         })
-//         .catch((error) => {
-//           console.error('Error:', error);
-//           setErrorMsg(true);
-//         });
-//     }
-//   }
-  
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${token}`;
   
   const searchLocation = (event) => {
     if (event.key === 'Enter') {
