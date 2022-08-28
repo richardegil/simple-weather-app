@@ -6,9 +6,9 @@ function App() {
   const [location, setLocation] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
-  const token = process.env.OPENWEATHER_TOKEN;
+  const { REACT_APP_OPENWEATHER_TOKEN } = process.env;
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${token}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${REACT_APP_OPENWEATHER_TOKEN}`;
   
   const searchLocation = (event) => {
     if (event.key === 'Enter') {
